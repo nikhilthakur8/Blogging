@@ -1,0 +1,16 @@
+extends base.pug
+block content 
+  .container.mt-4
+    form(action='/user/signup' method='post')
+      .mb-3
+        label.form-label(for='fullName') Full Name
+        input#fullName.form-control(type='text' name='fullName' aria-describedby='fullName')
+      .mb-3
+        label.form-label(for='exampleInputEmail1') Email address
+        input#exampleInputEmail1.form-control(type='email' name='email' aria-describedby='emailHelp')
+        #emailHelp.form-text
+          | We&apos;ll never share your email with anyone else.
+      .mb-3
+        label.form-label(for='exampleInputPassword1') Password
+        input#exampleInputPassword1.form-control(name='password' type='password')
+      button.btn.btn-primary(type='submit') Submit

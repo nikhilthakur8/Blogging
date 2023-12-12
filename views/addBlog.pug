@@ -1,0 +1,18 @@
+extends base
+block content
+  .container.mt-3
+    form(action="/blog", method="post", enctype='multipart/form-data') 
+      .mb-3
+        label.form-label(for='coverImage') Image 
+        input#coverImage.form-control(type="file" ,name="coverImage")
+      .mb-3
+        label.form-label(for='exampleFormControlInput1') Title
+        input#exampleFormControlInput1.form-control(type='text', name="title", placeholder='Enter Your Title')
+      .mb-3
+        label.form-label(for='exampleFormControlTextarea1') Blog
+        textarea#exampleFormControlTextarea1.form-control(rows='4',name ="body",placeholder="Add Your blog")
+      button.btn.btn-primary(type="submit") Add Now 
+
+
+
+

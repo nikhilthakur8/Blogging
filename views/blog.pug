@@ -1,0 +1,23 @@
+extends base
+block content 
+  .container.mt-3
+    h2 #{blog.title}
+    img(src=`${blog.coverImageURL}`, style ="width:400px; ")
+    .container.mt-2
+      pre #{blog.body}
+  .container.mt-4
+    img(src=`${blog.createdBy.profileImgURL}`,width = "30px")
+    |#{blog.createdBy.fullName}
+  if user
+    .container.mt-4
+      form(action=`/blog/comment/${blog._id}` method='post')
+        .mb-3
+          textarea#exampleInputEmail1.form-control( name='content',rows="5" ,placeholder ="Enter Your Comments")
+        button.btn.btn-primary(type='submit') Submit
+  .container.mt-3
+    h4 Total comments : #{comments.length}
+    each comment in comments
+      img(src=`${comment.createdBy.profileImgURL}`,width = "30px")
+      |#{comment.createdBy.fullName}
+      pre #{comment.content}
+

@@ -1,0 +1,14 @@
+extends base
+block content
+  .container.mt-4
+    .row.row-cols-3
+      each blog in blogs
+        .col
+          .card.col(style='width: 18rem;')
+            img.card-img-top(src=`${blog.coverImageURL}` alt='...')
+          .container.mt-4
+            .card-body
+            h5.card-title #{blog.title}
+              p.card-text
+                | 
+              a.btn.btn-primary(href=`/blog/${blog._id}`) View 
